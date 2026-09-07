@@ -4,7 +4,7 @@ import httpx
 from langchain_core.tools import tool
 from typing import Literal, Optional
 
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:9000")
+BACKEND_URL = os.getenv("BACKEND_URL", "https://milkyway-farms.onrender.com")
 
 
 async def fetch_user_orders(

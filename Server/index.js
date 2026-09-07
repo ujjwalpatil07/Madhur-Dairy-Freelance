@@ -26,13 +26,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://madhur-dairy-and-daily-needs.vercel.app",
-    ],
+    origin: ["http://localhost:5173", "https://milky-way-farms.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true,
-  })
+  }),
 );
 
 connectDB();
