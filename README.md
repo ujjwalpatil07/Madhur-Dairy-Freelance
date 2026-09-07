@@ -61,7 +61,7 @@
 ## 🌐 Hosted Links
 
 - 🚀 **Frontend**: [https://madhur-dairy-and-daily-needs.vercel.app/](https://madhur-dairy-and-daily-needs.vercel.app//)
-- 🌐 **Backend**: [https://madhur-dairy-daily-need-server-1eu6.onrender.com](https://madhur-dairy-daily-need-server-1eu6.onrender.com)
+- 🌐 **Backend**: [https://milkyway-farms.onrender.com](https://milkyway-farms.onrender.com)
 
 ---
 

@@ -1,5 +1,5 @@
 config:
-  target: 'https://madhur-dairy-daily-need-server-1eu6.onrender.com'
+  target: "https://milkyway-farms.onrender.com"
   phases:
     - duration: 30
       arrivalRate: 3
@@ -8,7 +8,7 @@ config:
       Content-Type: application/json
 scenarios:
   - flow:
-    - post:
-        url: "/admin/get-admin"
-        json:
-          _id: "codecrust1615@gmail.com"
+      - post:
+          url: "/admin/get-admin"
+          json:
+            _id: "codecrust1615@gmail.com"
