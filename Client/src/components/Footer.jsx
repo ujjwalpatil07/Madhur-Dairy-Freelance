@@ -31,7 +31,7 @@ const itemVariants = {
 function Footer() {
      const { theme } = useContext(ThemeContext);
 
-     const currentLogo = theme === "light" ? company?.logoLightTheme : company?.logoDaraTheme;
+     const currentLogo = theme === "light" ? company?.logoLightTheme : company?.logoDarkTheme;
 
      const socialIcons = [
           { key: "facebook", Icon: FacebookIcon, className: "hover:text-blue-600" },
