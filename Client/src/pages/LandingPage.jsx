@@ -9,7 +9,7 @@ import ProductCard from "../components/LandingComponents/ProductCard";
 import { features } from "../data/productGoodness ";
 import { UserAuthContext } from "../context/AuthProvider";
 import company from "../data/company.json";
-import MadhurLoader from "../components/MadhurLoader";
+import MilkyLoader from "../components/MilkyLoader";
 
 const QuestionAnswer = lazy(() => import("../components/LandingComponents/QuestionAnswer"));
 const FeatureCard = lazy(() => import("../components/LandingComponents/FeatureCard"));
@@ -43,7 +43,7 @@ export default function LandingPage() {
      if (pageLoading) {
           return (
                <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black">
-                    <MadhurLoader />
+                    <MilkyLoader />
                </div>
           );
      }
@@ -52,7 +52,7 @@ export default function LandingPage() {
           <>
                <section className="relative w-full md:h-[100vh] overflow-hidden">
                     <img
-                         src="https://res.cloudinary.com/dyahibuzy/image/upload/v1750157405/happyFamily_uuyftj.png"
+                         src="https://res.cloudinary.com/dyahibuzy/image/upload/v1788756083/Gemini_Generated_Image_csz32lcsz32lcsz3_sp6u1g.png"
                          alt="Happy Family"
                          className="absolute top-0 left-0 w-full h-full object-cover z-0"
                          fetchPriority="high"
