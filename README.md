@@ -1,12 +1,10 @@
-# Madhur Dairy & Daily Needs – Real-Time MERN Stack Based Dairy Products Platform 
+# MilkyWay Farms – Real-Time MERN Stack Based Dairy Products Platform
 
-
-![Madhur Dairy Banner](./assets/landingpage.png)
-
+![MilkyWay Farms Banner](./assets/landingpage.png)
 
 ## 📌 About the Project
 
-**Madhur Dairy** is a full-featured dairy product selling platform built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js). It includes secure authentication, real-time ordering, online payments, product reviews, admin management, and more.
+**MilkyWay Farms** is a full-featured dairy product selling platform built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js). It includes secure authentication, real-time ordering, online payments, product reviews, admin management, and more.
 
 > ⚙️ Simulates a real-world e-commerce system with deep integration of modern tools like Socket.IO, EmailJS, Google OAuth, Cloudinary, and Razorpay.
 
@@ -15,6 +13,7 @@
 ## 🔧 Tech Stack
 
 ### 🖥️ Frontend (React + Vite)
+
 - React.js, Vite
 - Tailwind CSS, Material UI
 - Chart.js (Admin analytics)
@@ -25,6 +24,7 @@
 - Fully Responsive
 
 ### ⚙️ Backend (Node.js + Express)
+
 - Express + Node.js
 - MongoDB + Mongoose
 - JWT & bcryptjs Auth
@@ -36,6 +36,7 @@
 ## 🛒 Core Features
 
 ### 👤 User Side
+
 - Register/Login (Google or Email)
 - OTP verification via EmailJS
 - Browse & filter products
@@ -47,6 +48,7 @@
 - View order history and profile
 
 ### 🛠️ Admin Panel
+
 - Real-time admin dashboard
 - Accept/Reject orders
 - Manage inventory (CRUD)
@@ -63,12 +65,12 @@
 
 ---
 
-##  Installation Guide (Local Setup)
+## Installation Guide (Local Setup)
 
->  Follow these steps to run the project on your local machine
-
+> Follow these steps to run the project on your local machine
 
 ### 1. Clone the repository
+
 Clones the full stack repo to your system.
 
 ```bash
@@ -76,30 +78,35 @@ git clone https://github.com/nitingayke/MilkProductsDairy.git
 ```
 
 ### 2. Move to the Project Directory
+
 Navigate into the main project folder.
 
 ```bash
 cd MilkProductsDairy
 ```
 
-### 3. Set Up the Client (Frontend) 
+### 3. Set Up the Client (Frontend)
+
 Navigate to the Client directory.
+
 ```bash
 cd Client
 ```
 
 Install all required frontend dependencies.
+
 ```bash
 npm install
 ```
 
 Start the frontend development server.
+
 ```bash
 npm run dev
 ```
 
-
 #### 4. Create Environment File for Client
+
 ```env
 VITE_EMAILJS_SERVICE_ID=<your_emailjs_service_id>
 VITE_EMAILJS_TEMPLATE_ID=<your_emailjs_template_id>
@@ -107,22 +114,27 @@ VITE_EMAILJS_PUBLIC_KEY=<your_emailjs_public_key>
 ```
 
 ### 5. Set Up the Server (Backend)
+
 Open a new terminal and navigate to the server folder.
+
 ```bash
 cd Server
 ```
 
 Install all backend dependencies.
+
 ```bash
 npm install
 ```
 
 Start the backend development server.
+
 ```bash
 nodemon
 ```
 
 ### 6. Create Environment File for Server
+
 ```env
 DB_URL=<your_mongodb_uri>
 CLOUDINARY_CLOUD_NAME=<your_cloud_name>
@@ -137,22 +149,21 @@ GOOGLE_CLIENT_ID=<your_google_oauth_client_id>
 
 ## 📸 Screenshots & UI Preview
 
-| Homepage | Product Page | Admin Dashboard |
-|----------|--------------|-----------------|
+| Homepage                           | Product Page                         | Admin Dashboard                      |
+| ---------------------------------- | ------------------------------------ | ------------------------------------ |
 | ![Homepage](./assets/homepage.png) | ![Product](./assets/productpage.png) | ![Dashboard](./assets/dashboard.png) |
 
-| Payment | Related Products | Admin Profile |
-|--------|----------------|----------------|
+| Payment                          | Related Products                                  | Admin Profile                  |
+| -------------------------------- | ------------------------------------------------- | ------------------------------ |
 | ![Payment](./assets/payment.png) | ![Related Products](./assets/relatedProducts.png) | ![Orders](./assets/orders.png) |
 
-
->  This project reflects real-world collaboration, planning, and execution — from designing the UI to deploying on production servers. Proudly built with
+> This project reflects real-world collaboration, planning, and execution — from designing the UI to deploying on production servers. Proudly built with
 
 ---
 
-##  Connect With Me
+## Connect With Me
+
 If you're working on something similar, have questions, or want to collaborate, feel free to connect! I’d love to hear from you. 🚀
 
--  [LinkedIn](https://www.linkedin.com/in/ujjwal-patil-9908782b0/)
--  [Email](mailto:ujjwal.patilofficial07@gmail.com)
-  
+- [LinkedIn](https://www.linkedin.com/in/ujjwal-patil-9908782b0/)
+- [Email](mailto:ujjwal.patilofficial07@gmail.com)

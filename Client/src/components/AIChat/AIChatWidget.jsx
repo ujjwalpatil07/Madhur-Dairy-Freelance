@@ -35,7 +35,7 @@ const AIChatWidget = () => {
                id: "welcome",
                role: "assistant",
                content:
-                    "Hi! 👋 I'm your Madhur AI Assistant. I can help you with products, orders, and more.",
+                    "Hi! 👋 I'm your MilkyWay AI Assistant. I can help you with products, orders, and more.",
           },
      ]);
 
@@ -58,7 +58,7 @@ const AIChatWidget = () => {
                     id: "welcome",
                     role: "assistant",
                     content:
-                         "Hi! 👋 I'm your Madhur AI Assistant. I can help you with products, orders, and more.",
+                         "Hi! 👋 I'm your MilkyWay AI Assistant. I can help you with products, orders, and more.",
                },
           ]);
      }, [authUser?._id]);
@@ -234,7 +234,7 @@ const AIChatWidget = () => {
 
                                    <div className="min-w-0">
                                         <h3 className="truncate text-sm font-bold">
-                                             Madhur AI Assistant
+                                             MilkyWay AI Assistant
                                         </h3>
 
                                         <p className="truncate text-[10px] text-white/75 sm:text-[11px]">

@@ -47,7 +47,7 @@ export default function ContactPage() {
 
         const whatsappMessage = `Hello! I'm ${fullName},\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`;
         const encodedMessage = encodeURIComponent(whatsappMessage);
-        window.open(`https://wa.me/919209143657?text=${encodedMessage}`, "_blank");
+        window.open(`https://wa.me/919244143657?text=${encodedMessage}`, "_blank");
     };
 
     return (

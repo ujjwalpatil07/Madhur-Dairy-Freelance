@@ -150,7 +150,7 @@ export default function OrderCheckoutPage() {
           key: data.keyId,
           amount: data.amount,
           currency: data.currency,
-          name: "Madhur Dairy & Daily Needs",
+          name: "MilkyWay Farms",
           description: "Payment for your order",
           order_id: data.orderId,
           handler: async (response) => {

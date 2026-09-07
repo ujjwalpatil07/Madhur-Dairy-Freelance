@@ -24,7 +24,7 @@ export default function MadhurLoader({ fullScreen = false }) {
         {/* Brand Text (Left) */}
         <div className="text-left">
           <h1 className="text-2xl sm:text-3xl font-bold text-[#843E71] dark:text-yellow-100">
-            Madhur Dairy <br /> and Daily Needs
+            MilkyWay <br /> Farms
           </h1>
           
           <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
