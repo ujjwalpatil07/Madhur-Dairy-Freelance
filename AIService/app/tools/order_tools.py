@@ -6,8 +6,7 @@ from typing import Literal, Optional
 
 
 BACKEND_URL = os.getenv(
-    "BACKEND_URL",
-    "http://localhost:9000",
+    "BACKEND_URL"
 )
 
 

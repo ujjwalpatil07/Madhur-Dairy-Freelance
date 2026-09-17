@@ -11,7 +11,6 @@ load_dotenv()
 # Existing Express backend URL
 BACKEND_URL = os.getenv(
     "BACKEND_URL",
-    "http://localhost:9000",
 )
 
 
