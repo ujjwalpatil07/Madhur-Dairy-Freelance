@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export const chatWithAI = async (req, res) => {
-  try {
     const { message } = req.body;
 
     if (!message || !message.trim()) {
@@ -28,22 +27,4 @@ export const chatWithAI = async (req, res) => {
       // Structured data used by React to render cards
       ui: response.data.ui || null,
     });
-  } catch (error) {
-    console.error(
-      "AI Controller Error:",
-      error.response?.data || error.message,
-    );
-
-    if (error.response?.status === 429) {
-      return res.status(429).json({
-        success: false,
-        message: "AI usage limit has been reached.",
-      });
-    }
-
-    return res.status(500).json({
-      success: false,
-      message: "AI service is unavailable",
-    });
-  }
 };

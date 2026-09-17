@@ -28,19 +28,21 @@ export const editProfile = async (req, res) => {
 };
 
 export const getAddresses = async (req, res) => {
-  const { userId } = req.body;
+  const { userId } = req.query;
 
   if (!userId) {
-    return res.status(400).json({ success: false, message: "Missing user id" });
+    return res.status(400).json({
+      success: false,
+      message: "Missing user id",
+    });
   }
 
   const user = await User.findById(userId).populate("savedAddresses");
 
   if (!user) {
-    res.status(400).json({
+    return res.status(404).json({
       success: false,
       message: "User Not Found",
-      newUser: updatedUser,
     });
   }
 
@@ -49,7 +51,7 @@ export const getAddresses = async (req, res) => {
   res.status(200).json({
     success: true,
     message: "Addresses fetched successfully",
-    userAddresses: userAddresses,
+    userAddresses,
   });
 };
 
@@ -196,10 +198,12 @@ export const addToWishlistedProducts = async (req, res) => {
 };
 
 export const getUserWishlistedProducts = async (req, res) => {
-  const { userId } = req.body;
+  const { userId } = req.query;
 
   if (!userId) {
-    return res.status(400).json({ error: "User ID is required." });
+    return res.status(400).json({
+      error: "User ID is required.",
+    });
   }
 
   const user = await User.findById(userId).populate({
@@ -208,12 +212,15 @@ export const getUserWishlistedProducts = async (req, res) => {
   });
 
   if (!user) {
-    return res.status(404).json({ error: "User not found." });
+    return res.status(404).json({
+      error: "User not found.",
+    });
   }
 
-  return res
-    .status(200)
-    .json({ success: true, wishlistedProducts: user.wishlistedProducts });
+  return res.status(200).json({
+    success: true,
+    wishlistedProducts: user.wishlistedProducts,
+  });
 };
 
 export const removeFromWishlistedProducts = async (req, res) => {

@@ -4,7 +4,11 @@ import httpx
 from langchain_core.tools import tool
 from typing import Literal, Optional
 
-BACKEND_URL = os.getenv("BACKEND_URL", "https://milkyway-farms.onrender.com")
+
+BACKEND_URL = os.getenv(
+    "BACKEND_URL",
+    "http://localhost:9000",
+)
 
 
 async def fetch_user_orders(
@@ -24,7 +28,7 @@ async def fetch_user_orders(
         Processing, Shipped, Cancelled, or Confirmed.
     """
 
-    url = f"{BACKEND_URL}/order/get-user-orders"
+    url = f"{BACKEND_URL}/orders/user"
 
     async with httpx.AsyncClient(timeout=10.0) as client:
         response = await client.post(
@@ -176,14 +180,17 @@ async def get_my_orders(
     }
 
 
-async def fetch_order_status(order_id: str, user_id: str):
+async def fetch_order_status(
+    order_id: str,
+    user_id: str,
+):
     """
     Internal function.
 
     Fetch a specific order's status through the Express backend.
     """
 
-    url = f"{BACKEND_URL}/order/get-order-status"
+    url = f"{BACKEND_URL}/orders/status"
 
     async with httpx.AsyncClient(timeout=10.0) as client:
         response = await client.post(
@@ -211,6 +218,9 @@ async def get_order_status(order_id: str):
 
     return {
         "success": True,
-        "message": "This tool must be executed by the application with the authenticated user's ID.",
+        "message": (
+            "This tool must be executed by the application "
+            "with the authenticated user's ID."
+        ),
         "orderId": order_id,
     }

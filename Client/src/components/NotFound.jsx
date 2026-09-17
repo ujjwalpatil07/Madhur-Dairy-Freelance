@@ -21,7 +21,7 @@ export default function NotFound() {
       >
         <img
           src={theme === "light" ? logoLightMode : logoDarkMode}
-          alt="MilkyWay Farms Logo"
+          alt="Madhur Dairy and Daily Needs Logo"
           loading="lazy"
           className="h-16"
         />

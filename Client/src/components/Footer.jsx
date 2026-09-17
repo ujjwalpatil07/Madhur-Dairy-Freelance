@@ -55,7 +55,7 @@ function Footer() {
                          <motion.div variants={itemVariants} className="space-y-4">
                               <img
                                    src={currentLogo}
-                                   alt="MilkyWay Farms Logo"
+                                   alt="Madhur Dairy and Daily Needs Logo"
                                    className="w-32 object-contain"
                                    loading="lazy"
                               />

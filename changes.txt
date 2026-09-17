@@ -1,0 +1,20 @@
+--> Client
+VITE_API_BASE_URL=https://milkyway-farms.onrender.com
+                  |
+                  |
+VITE_API_BASE_URL=http://localhost:9000
+
+--> Server
+AI_SERVICE_URL=https://milkyway-farms-1.onrender.com
+                  |
+                  |
+AI_SERVICE_URL=http://localhost:8000
+
+
+--> AI Service
+BACKEND_URL=https://milkyway-farms.onrender.com
+                  |
+                  |
+BACKEND_URL=http://localhost:9000
+
+

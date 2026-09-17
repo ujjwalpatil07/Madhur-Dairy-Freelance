@@ -195,7 +195,7 @@ export default function LandingPage() {
                          >
                               <h2 className="text-2xl font-bold mb-4">What Our Customers Say</h2>
                               <p className="text-gray-700 dark:text-gray-300 text-lg">
-                                   At <span className="font-semibold">MilkyWay Farms</span>, we provide fresh, nutritious, and
+                                   At <span className="font-semibold">Madhur Dairy and Daily Needs</span>, we provide fresh, nutritious, and
                                    high-quality milky products loved by families and especially ideal for small children. Our customers' feedback
                                    reflects our commitment to quality and health!
                               </p>

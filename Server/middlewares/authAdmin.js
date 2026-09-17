@@ -1,10 +1,9 @@
 import jwt from "jsonwebtoken";
 
-const authUser = (req, res, next) => {
+const authAdmin = (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
 
-    // Authorization header missing
     if (!authHeader) {
       return res.status(401).json({
         success: false,
@@ -12,8 +11,6 @@ const authUser = (req, res, next) => {
       });
     }
 
-    // Expected:
-    // Authorization: Bearer <token>
     const parts = authHeader.split(" ");
 
     if (parts.length !== 2 || parts[0] !== "Bearer") {
@@ -34,25 +31,23 @@ const authUser = (req, res, next) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // Make sure this is a user token
-    if (decoded.role !== "user") {
+    // Make sure this is an admin token
+    if (decoded.role !== "admin") {
       return res.status(403).json({
         success: false,
-        message: "User access required",
+        message: "Admin access required",
       });
     }
 
-    if (!decoded.userId) {
+    if (!decoded.adminId) {
       return res.status(401).json({
         success: false,
-        message: "Invalid user token",
+        message: "Invalid admin token",
       });
     }
 
-    // Attach authenticated user information
-    // to the request object.
-    req.user = {
-      userId: decoded.userId,
+    req.admin = {
+      adminId: decoded.adminId,
       role: decoded.role,
     };
 
@@ -79,4 +74,4 @@ const authUser = (req, res, next) => {
   }
 };
 
-export default authUser;
+export default authAdmin;

@@ -1,10 +1,8 @@
-
 import os
 
 import httpx
 from dotenv import load_dotenv
 from langchain_core.tools import tool
-from typing import Optional
 
 # Load environment variables from .env
 load_dotenv()
@@ -13,7 +11,7 @@ load_dotenv()
 # Existing Express backend URL
 BACKEND_URL = os.getenv(
     "BACKEND_URL",
-    "https://milkyway-farms.onrender.com"
+    "http://localhost:9000",
 )
 
 
@@ -31,7 +29,7 @@ async def get_available_products():
     - Show me the product catalog.
     """
 
-    url = f"{BACKEND_URL}/products/get-products"
+    url = f"{BACKEND_URL}/products"
 
     try:
         async with httpx.AsyncClient(timeout=10.0) as client:
@@ -60,7 +58,7 @@ async def get_available_products():
 
         return {
             "success": True,
-            "products": simplified_products
+            "products": simplified_products,
         }
 
     except httpx.HTTPStatusError as error:
@@ -69,7 +67,7 @@ async def get_available_products():
             "message": (
                 f"Backend returned HTTP "
                 f"{error.response.status_code}"
-            )
+            ),
         }
 
     except httpx.RequestError as error:
@@ -77,13 +75,13 @@ async def get_available_products():
             "success": False,
             "message": (
                 f"Could not connect to backend: {str(error)}"
-            )
+            ),
         }
 
     except Exception as error:
         return {
             "success": False,
-            "message": f"Unexpected error: {str(error)}"
+            "message": f"Unexpected error: {str(error)}",
         }
 
 
@@ -108,7 +106,7 @@ async def get_product(product_name: str):
     if not product_name:
         return {
             "success": False,
-            "message": "Product name cannot be empty."
+            "message": "Product name cannot be empty.",
         }
 
     url = (
@@ -126,7 +124,7 @@ async def get_product(product_name: str):
                 "message": (
                     f"Product '{product_name}' "
                     f"was not found."
-                )
+                ),
             }
 
         response.raise_for_status()
@@ -183,7 +181,7 @@ async def get_product(product_name: str):
 
         return {
             "success": True,
-            "product": simplified_product
+            "product": simplified_product,
         }
 
     except httpx.HTTPStatusError as error:
@@ -192,7 +190,7 @@ async def get_product(product_name: str):
             "message": (
                 f"Backend returned HTTP "
                 f"{error.response.status_code}"
-            )
+            ),
         }
 
     except httpx.RequestError as error:
@@ -200,14 +198,15 @@ async def get_product(product_name: str):
             "success": False,
             "message": (
                 f"Could not connect to backend: {str(error)}"
-            )
+            ),
         }
 
     except Exception as error:
         return {
             "success": False,
-            "message": f"Unexpected error: {str(error)}"
+            "message": f"Unexpected error: {str(error)}",
         }
+
 
 @tool
 async def search_products(product_query: str):

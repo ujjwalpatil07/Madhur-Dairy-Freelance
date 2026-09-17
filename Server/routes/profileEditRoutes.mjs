@@ -1,5 +1,6 @@
 import express from "express";
 import wrapAsync from "../utils/wrapAsync.js";
+
 import {
   editProfile,
   getProfileData,
@@ -12,28 +13,45 @@ import {
   removeFromWishlistedProducts,
   addToWishlistedProducts,
 } from "../controllers/profileEdit.js";
+
 import { upload } from "../config/cloudinary.js";
 
 const router = express.Router();
 
-router.put("/profile-edit", wrapAsync(editProfile));
+// ================================
+// Profile
+// ================================
 
-router.post("/get-addresses", wrapAsync(getAddresses));
+router.put("/profile", wrapAsync(editProfile));
 
-router.post("/profile", wrapAsync(getProfileData));
+router.post("/profile/data", wrapAsync(getProfileData));
 
-router.post("/add-address", wrapAsync(saveNewAddress));
+router.post(
+  "/profile/photo",
+  upload.single("photo"),
+  wrapAsync(editProfilePhoto),
+);
 
-router.post("/remove-address", wrapAsync(deleteAddress));
+// ================================
+// Addresses
+// ================================
 
-router.put("/edit-address", wrapAsync(editAddress));
+router.get("/addresses", wrapAsync(getAddresses));
 
-router.post("/edit-profilePhoto", upload.single("photo"), wrapAsync(editProfilePhoto));
+router.post("/addresses", wrapAsync(saveNewAddress));
 
-router.put("/add-to-wishlist", wrapAsync(addToWishlistedProducts));
+router.delete("/addresses", wrapAsync(deleteAddress));
 
-router.post("/get-wishlisted", wrapAsync(getUserWishlistedProducts));
+router.put("/addresses", wrapAsync(editAddress));
 
-router.post("/remove-from-wishlist", wrapAsync(removeFromWishlistedProducts));
+// ================================
+// Wishlist
+// ================================
+
+router.get("/wishlist", wrapAsync(getUserWishlistedProducts));
+
+router.put("/wishlist", wrapAsync(addToWishlistedProducts));
+
+router.delete("/wishlist", wrapAsync(removeFromWishlistedProducts));
 
 export default router;

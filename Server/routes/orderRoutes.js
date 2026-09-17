@@ -1,18 +1,36 @@
 import express from "express";
 import wrapAsync from "../utils/wrapAsync.js";
-import { getAllOrders, getAllUserOrders, getAdminOrders, getRecentOrders, getOrderStatus } from "../controllers/orderController.js";
+
+import {
+  getAllOrders,
+  getAllUserOrders,
+  getAdminOrders,
+  getRecentOrders,
+  getOrderStatus,
+} from "../controllers/orderController.js";
 
 const router = express.Router();
 
-router.post("/get-user-orders", wrapAsync(getAllUserOrders));
+// ================================
+// Orders
+// ================================
 
-router.post("/get-all-orders", wrapAsync(getAllOrders));
+router.post("/", wrapAsync(getAllOrders));
 
-router.post("/get-admin-orders", wrapAsync(getAdminOrders));
+router.post("/user", wrapAsync(getAllUserOrders));
 
-router.post("/get-order-status", wrapAsync(getOrderStatus));
+router.post("/admin", wrapAsync(getAdminOrders));
 
-router.get("/recent-20", wrapAsync(getRecentOrders));
+// ================================
+// Order Status
+// ================================
 
+router.post("/status", wrapAsync(getOrderStatus));
+
+// ================================
+// Recent Orders
+// ================================
+
+router.get("/recent", wrapAsync(getRecentOrders));
 
 export default router;

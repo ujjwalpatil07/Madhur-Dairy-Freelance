@@ -1,15 +1,33 @@
 import express from "express";
 import wrapAsync from "../utils/wrapAsync.js";
-import { getProducts, getRecentReview, likeProduct, searchProducts } from "../controllers/productController.js";
+
+import {
+  getProducts,
+  getRecentReview,
+  likeProduct,
+  searchProducts,
+} from "../controllers/productController.js";
 
 const router = express.Router();
 
-router.get("/get-products", wrapAsync(getProducts))
+// ================================
+// Products
+// ================================
+
+router.get("/", wrapAsync(getProducts));
 
 router.get("/search/:productName", wrapAsync(searchProducts));
 
-router.put("/like/:productId", wrapAsync(likeProduct));
+// ================================
+// Product Like
+// ================================
 
-router.get("/recent-reviews", wrapAsync(getRecentReview));
+router.put("/:productId/like", wrapAsync(likeProduct));
+
+// ================================
+// Reviews
+// ================================
+
+router.get("/reviews/recent", wrapAsync(getRecentReview));
 
 export default router;

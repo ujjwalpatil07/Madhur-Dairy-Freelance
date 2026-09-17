@@ -37,7 +37,7 @@ export const generateOrderBillPDF = async (req, res) => {
     .font("Helvetica-Bold")
     .fontSize(22)
     .fillColor("#313131")
-    .text("MilkyWay Farms", { align: "center" });
+    .text("Madhur Dairy and Daily Needs", { align: "center" });
 
   doc
     .fontSize(10)
@@ -164,7 +164,7 @@ export const generateOrderBillPDF = async (req, res) => {
     .font("Helvetica-Oblique")
     .fontSize(10)
     .fillColor("gray")
-    .text("Thank you for shopping with MilkyWay Farms.", {
+    .text("Thank you for shopping with Madhur Dairy and Daily Needs.", {
       align: "center",
     })
     .text("We look forward to serving you again!", { align: "center" });

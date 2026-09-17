@@ -1,6 +1,9 @@
 import api from "./api";
 
 export const razorpayOrderPayment = async (amount) => {
-  const res = await api.post("/payment/create-razorpay-order", { amount });
+  const res = await api.post("/payments/razorpay", {
+    amount,
+  });
+
   return res.data;
 };

@@ -1,72 +1,158 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { GoogleLogin } from "@react-oauth/google";
-import { loginWithGoogle } from "../../../services/userService";
 import { useSnackbar } from "notistack";
-import { AdminAuthContext, UserAuthContext } from "../../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
+import {
+     loginWithGoogle,
+     getCurrentUser,
+} from "../../../services/userService";
 
-export default function GoogleLoginComponent( {setOpenLoginDialog, setGoogleLoginLoading} ) {
-  const navigate = useNavigate();
-  const { enqueueSnackbar } = useSnackbar();
-  const { handleAdminLogout } = useContext(AdminAuthContext);
-  const { fetchUserData } = useContext(UserAuthContext);
+import {
+     AdminAuthContext,
+     UserAuthContext,
+} from "../../../context/AuthProvider";
 
-  return (
+export default function GoogleLoginComponent({
+     setOpenLoginDialog,
+     setGoogleLoginLoading,
+}) {
+     const navigate = useNavigate();
+     const { enqueueSnackbar } = useSnackbar();
 
-    <GoogleLogin
-      onSuccess={async (credentialResponse) => {
-        try {
-          setGoogleLoginLoading(true);
-          const res = await loginWithGoogle(credentialResponse.credential);
-             if (res?.success) {
-                  localStorage.setItem("accessToken", res?.token);
+     const { handleAdminLogout } = useContext(AdminAuthContext);
 
-                  if (!res?.filledBasicInfo) {
-                       navigate("/signup/info-input", {
-                            state: {
-                                 user: res?.user,
-                                 viaLogin: true,
-                            },
-                       });
-                  } else {
-                       localStorage.setItem(
-                            "User",
-                            JSON.stringify({
-                                 email: res?.user?.email,
-                                 _id: res?.user?._id,
-                            })
-                       );
+     const {
+          setAuthUser,
+          setAuthUserLoading,
+     } = useContext(UserAuthContext);
 
-                       await fetchUserData(res?.user?._id);
+     const handleGoogleLoginSuccess = async (credentialResponse) => {
+          try {
+               setGoogleLoginLoading(true);
 
-                       handleAdminLogout();
+               const res = await loginWithGoogle(
+                    credentialResponse.credential
+               );
 
-                       enqueueSnackbar(
-                            "Login Successful!",
-                            { variant: "success" }
-                       );
-                  }
-             }
-        } catch (err) {
-          const message =
-            err.response?.data?.message || "Error logging in with Google.";
-          enqueueSnackbar(message, { variant: "error" });
-        }finally{
-          setOpenLoginDialog(false);
+               if (!res?.success || !res?.accessToken) {
+                    enqueueSnackbar(
+                         res?.message || "Google login failed.",
+                         {
+                              variant: "error",
+                         }
+                    );
+
+                    return;
+               }
+
+               handleAdminLogout();
+
+               localStorage.setItem(
+                    "accessToken",
+                    res.accessToken
+               );
+
+               if (!res?.filledBasicInfo) {
+                    enqueueSnackbar(
+                         "Please complete your profile information.",
+                         {
+                              variant: "info",
+                         }
+                    );
+
+                    navigate("/signup/info-input", {
+                         state: {
+                              viaLogin: true,
+                         },
+                    });
+
+                    return;
+               }
+
+               setAuthUserLoading(true);
+
+               const currentUserResponse =
+                    await getCurrentUser();
+
+               if (
+                    !currentUserResponse?.success ||
+                    !currentUserResponse?.user
+               ) {
+                    localStorage.removeItem("accessToken");
+                    setAuthUser(null);
+
+                    enqueueSnackbar(
+                         currentUserResponse?.message ||
+                         "Unable to load user profile.",
+                         {
+                              variant: "error",
+                         }
+                    );
+
+                    return;
+               }
+
+               setAuthUser(
+                    currentUserResponse.user
+               );
+
+               enqueueSnackbar(
+                    "Login Successful!",
+                    {
+                         variant: "success",
+                    }
+               );
+
+               navigate("/home");
+          } catch (err) {
+
+               localStorage.removeItem("accessToken");
+               setAuthUser(null);
+
+               const message =
+                    err?.response?.data?.message ||
+                    "Error logging in with Google.";
+
+               enqueueSnackbar(message, {
+                    variant: "error",
+               });
+          } finally {
+               setAuthUserLoading(false);
+
+               if (setOpenLoginDialog) {
+                    setOpenLoginDialog(false);
+               }
+
+               setGoogleLoginLoading(false);
+          }
+     };
+
+     const handleGoogleLoginError = () => {
           setGoogleLoginLoading(false);
-        }
-      }}
 
-      onError={() => {
-        enqueueSnackbar("Google Login Failed", { variant: "error" });
-      }}
-    />
-  );
+          if (setOpenLoginDialog) {
+               setOpenLoginDialog(false);
+          }
+
+          enqueueSnackbar(
+               "Google Login Failed",
+               {
+                    variant: "error",
+               }
+          );
+     };
+
+     return (
+          <GoogleLogin
+               onSuccess={handleGoogleLoginSuccess}
+               onError={handleGoogleLoginError}
+          />
+     );
 }
 
 GoogleLoginComponent.propTypes = {
-  setOpenLoginDialog: PropTypes.func.isRequired,
-  setGoogleLoginLoading: PropTypes.func.isRequired,
+     setOpenLoginDialog: PropTypes.func,
+     setGoogleLoginLoading: PropTypes.func.isRequired,
 };

@@ -25,6 +25,7 @@ export const connectToSocket = (server) => {
     cors: {
       origin: [
         "http://localhost:5173",
+        "http://localhost:5174",
         "https://milky-way-farms.vercel.app",
       ],
       methods: ["GET", "POST", "DELETE", "PUT"],

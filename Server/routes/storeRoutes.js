@@ -1,11 +1,23 @@
 import express from "express";
-import { getAllStores, getStoreOrderHistory } from "../controllers/storeController.js";
 import wrapAsync from "../utils/wrapAsync.js";
+
+import {
+  getAllStores,
+  getStoreOrderHistory,
+} from "../controllers/storeController.js";
 
 const router = express.Router();
 
-router.get("/get-stores", wrapAsync(getAllStores));
+// ================================
+// Stores
+// ================================
 
-router.post("/store-order-history", wrapAsync(getStoreOrderHistory));
+router.get("/", wrapAsync(getAllStores));
+
+// ================================
+// Store Order History
+// ================================
+
+router.post("/order-history", wrapAsync(getStoreOrderHistory));
 
 export default router;

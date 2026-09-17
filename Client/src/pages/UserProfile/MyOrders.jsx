@@ -219,7 +219,7 @@ export default function MyOrders() {
 
                                    {order?.status === "Delivered" && (
                                         <a
-                                             href={`https://milkyway-farms.onrender.com/pdf/generate-bill/${order?._id}`}
+                                             href={`${import.meta.env.VITE_API_BASE_URL || "http://localhost:9000"}/pdf/orders/${order?._id}/bill`}
                                              target="_blank"
                                              rel="noopener noreferrer"
                                              className="w-full sm:w-fit px-4 py-1.5 text-sm font-semibold rounded bg-[#843E71] hover:bg-[#843E7190] text-white inline-block text-center"

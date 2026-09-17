@@ -199,9 +199,9 @@ export const products = [
 
 export const faqs = [
   {
-    question: "Why is MilkyWay Farms best for me?",
+    question: "Why is Madhur Dairy and Daily Needs best for me?",
     answer:
-      "MilkyWay Farms provides 100% pure, unadulterated dairy products with no preservatives, artificial colors, or harmful additives. Our products come directly from our own farms where cows are grass-fed and raised in hygienic conditions.",
+      "Madhur Dairy and Daily Needs provides 100% pure, unadulterated dairy products with no preservatives, artificial colors, or harmful additives. Our products come directly from our own farms where cows are grass-fed and raised in hygienic conditions.",
   },
   {
     question: "How do you ensure quality?",

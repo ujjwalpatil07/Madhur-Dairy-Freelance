@@ -1,15 +1,27 @@
-import express from "express"
-import wrapAsync from "../../utils/wrapAsync.js"
-import { getAdmin, handleAdminUpdatePassword, loginAdmin, removeAdminNotification } from "../../controllers/AuthController/authAdmin.js";
+import express from "express";
+import wrapAsync from "../../utils/wrapAsync.js";
+
+import {
+  getCurrentAdmin,
+  handleAdminUpdatePassword,
+  loginAdmin,
+  removeAdminNotification,
+  testAdminAuth,
+} from "../../controllers/AuthController/authAdmin.js";
+import authAdmin from "../../middlewares/authAdmin.js";
 
 const router = express.Router();
 
+// Admin Authentication
 router.post("/login", wrapAsync(loginAdmin));
 
-router.post("/get-admin", wrapAsync(getAdmin));
+// Admin Profile / Account
+router.get("/me", authAdmin, wrapAsync(getCurrentAdmin));
+router.post("/update-password", wrapAsync(handleAdminUpdatePassword));
 
+// Admin Notifications
 router.delete("/delete-notification", wrapAsync(removeAdminNotification));
 
-router.post("/update-password", wrapAsync(handleAdminUpdatePassword));
+router.get("/test-auth", authAdmin, wrapAsync(testAdminAuth));
 
 export default router;

@@ -43,7 +43,6 @@ model = ChatGoogleGenerativeAI(
         "GEMINI_MODEL",
         "gemini-3.5-flash"
     ),
-    temperature=0,
 )
 
 
