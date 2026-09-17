@@ -12,21 +12,21 @@ The project also integrates modern technologies such as **Google OAuth, EmailJS,
 
 ## 🎯 Key Highlights
 
-* Full-stack MERN architecture
-* Responsive customer-facing shopping platform
-* Dedicated admin dashboard
-* Secure JWT-based authentication
-* Google OAuth authentication
-* Email OTP verification
-* Product and inventory management
-* Shopping cart and checkout
-* Razorpay online payments
-* Cash on Delivery
-* Order management and tracking
-* Product reviews and ratings
-* Cloudinary image management
-* AI-powered customer assistance
-* MongoDB-based persistent data storage
+- Full-stack MERN architecture
+- Responsive customer-facing shopping platform
+- Dedicated admin dashboard
+- Secure JWT-based authentication
+- Google OAuth authentication
+- Email OTP verification
+- Product and inventory management
+- Shopping cart and checkout
+- Razorpay online payments
+- Cash on Delivery
+- Order management and tracking
+- Product reviews and ratings
+- Cloudinary image management
+- AI-powered customer assistance
+- MongoDB-based persistent data storage
 
 ---
 
@@ -34,39 +34,39 @@ The project also integrates modern technologies such as **Google OAuth, EmailJS,
 
 ### 🖥️ Frontend
 
-* React.js
-* Vite
-* Tailwind CSS
-* Material UI
-* Chart.js
-* Axios
-* EmailJS
-* Google OAuth
-* Razorpay Checkout
-* Cloudinary
-* Responsive UI design
+- React.js
+- Vite
+- Tailwind CSS
+- Material UI
+- Chart.js
+- Axios
+- EmailJS
+- Google OAuth
+- Razorpay Checkout
+- Cloudinary
+- Responsive UI design
 
 ### ⚙️ Backend
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT Authentication
-* bcryptjs
-* RESTful APIs
-* Cloudinary
-* Razorpay
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcryptjs
+- RESTful APIs
+- Cloudinary
+- Razorpay
 
 ### 🤖 AI Service
 
-* Python
-* FastAPI
-* LangChain
-* LangGraph
-* Google Gemini
-* AI tool-calling
-* Context-aware application assistance
+- Python
+- FastAPI
+- LangChain
+- LangGraph
+- Google Gemini
+- AI tool-calling
+- Context-aware application assistance
 
 ---
 
@@ -76,64 +76,64 @@ The project also integrates modern technologies such as **Google OAuth, EmailJS,
 
 #### Authentication
 
-* User registration and login
-* JWT-based authentication
-* Google OAuth login
-* Email OTP verification
-* Secure password handling
+- User registration and login
+- JWT-based authentication
+- Google OAuth login
+- Email OTP verification
+- Secure password handling
 
 #### Product Browsing
 
-* Browse available dairy products
-* Product search
-* Category-based filtering
-* Product details
-* Related products
-* Product availability information
+- Browse available dairy products
+- Product search
+- Category-based filtering
+- Product details
+- Related products
+- Product availability information
 
 #### Cart & Checkout
 
-* Add products to cart
-* Update product quantities
-* Remove products from cart
-* Cart total calculation
-* Address management
-* Checkout process
-* Cash on Delivery
-* Razorpay online payment
+- Add products to cart
+- Update product quantities
+- Remove products from cart
+- Cart total calculation
+- Address management
+- Checkout process
+- Cash on Delivery
+- Razorpay online payment
 
 #### Orders
 
-* Place orders
-* View order history
-* View order details
-* Track order status
-* Payment status tracking
+- Place orders
+- View order history
+- View order details
+- Track order status
+- Payment status tracking
 
 #### Reviews
 
-* Product ratings
-* Product reviews
-* Review interaction
+- Product ratings
+- Product reviews
+- Review interaction
 
 #### Profile
 
-* Manage profile information
-* Manage saved addresses
-* Manage wishlist
-* Update profile picture
+- Manage profile information
+- Manage saved addresses
+- Manage wishlist
+- Update profile picture
 
 #### AI Assistant
 
 The integrated AI assistant helps users with application-related queries such as:
 
-* Finding products
-* Searching products
-* Getting product information
-* Checking available products
-* Viewing order history
-* Checking order status
-* Answering product-related questions
+- Finding products
+- Searching products
+- Getting product information
+- Checking available products
+- Viewing order history
+- Checking order status
+- Answering product-related questions
 
 ---
 
@@ -141,34 +141,34 @@ The integrated AI assistant helps users with application-related queries such as
 
 ### Product Management
 
-* Add new products
-* Update products
-* Delete products
-* Manage product images
-* Manage product pricing
-* Manage product inventory
-* Manage product availability
+- Add new products
+- Update products
+- Delete products
+- Manage product images
+- Manage product pricing
+- Manage product inventory
+- Manage product availability
 
 ### Order Management
 
-* View all customer orders
-* View customer-specific order history
-* Accept and process orders
-* Update order status
-* Manage order payment information
+- View all customer orders
+- View customer-specific order history
+- Accept and process orders
+- Update order status
+- Manage order payment information
 
 ### Customer Management
 
-* View registered customers
-* View customer information
-* View customer order history
+- View registered customers
+- View customer information
+- View customer order history
 
 ### Analytics
 
-* Dashboard statistics
-* Product and order insights
-* Inventory monitoring
-* Data visualization using Chart.js
+- Dashboard statistics
+- Product and order insights
+- Inventory monitoring
+- Data visualization using Chart.js
 
 ---
 
@@ -457,14 +457,14 @@ Protected endpoints use **JWT-based authentication and authorization**.
 
 The application implements multiple security mechanisms:
 
-* JWT-based authentication
-* Role-based admin authorization
-* Password hashing using bcryptjs
-* Protected customer and admin routes
-* Server-side authorization checks
-* Product and inventory validation
-* Payment signature verification
-* Secure environment variable configuration
+- JWT-based authentication
+- Role-based admin authorization
+- Password hashing using bcryptjs
+- Protected customer and admin routes
+- Server-side authorization checks
+- Product and inventory validation
+- Payment signature verification
+- Secure environment variable configuration
 
 ---
 
@@ -473,19 +473,19 @@ The application implements multiple security mechanisms:
 ### Frontend
 
 **Live Application:**
-`https://milky-way-farms.vercel.app`
+`https://madhurdairy.vercel.app`
 
 ### Backend
 
 **Backend API:**
-`https://milkyway-farms.onrender.com`
+`https://madhur-dairy-nodeservice.onrender.com`
 
 ### AI Service
 
 The AI service is deployed separately as a Python FastAPI service.
 
 **AI Service:**
-`[Add your deployed AIService URL here]`
+`https://madhur-dairy-aiservice.onrender.com`
 
 ---
 
@@ -668,14 +668,14 @@ Inventory is validated server-side to prevent ordering unavailable products.
 
 The primary objectives of Madhur Dairy and Daily Needs are:
 
-* Build a complete real-world MERN e-commerce application
-* Implement secure authentication and authorization
-* Provide a responsive and intuitive shopping experience
-* Build an administrative management dashboard
-* Integrate online payment processing
-* Implement scalable REST APIs
-* Integrate AI capabilities into an existing full-stack application
-* Demonstrate deployment across multiple cloud services
+- Build a complete real-world MERN e-commerce application
+- Implement secure authentication and authorization
+- Provide a responsive and intuitive shopping experience
+- Build an administrative management dashboard
+- Integrate online payment processing
+- Implement scalable REST APIs
+- Integrate AI capabilities into an existing full-stack application
+- Demonstrate deployment across multiple cloud services
 
 ---
 
@@ -683,13 +683,13 @@ The primary objectives of Madhur Dairy and Daily Needs are:
 
 Possible future improvements include:
 
-* Advanced product recommendation system
-* More sophisticated AI-powered recommendations
-* Automated customer notifications
-* Advanced analytics
-* Improved search and personalization
-* Expanded payment and delivery integrations
-* Enhanced review and customer engagement features
+- Advanced product recommendation system
+- More sophisticated AI-powered recommendations
+- Automated customer notifications
+- Advanced analytics
+- Improved search and personalization
+- Expanded payment and delivery integrations
+- Enhanced review and customer engagement features
 
 ---
 
@@ -697,8 +697,8 @@ Possible future improvements include:
 
 **Ujjwal Patil**
 
-* LinkedIn: [Add LinkedIn profile]
-* Email: [Add email address]
+- LinkedIn: [Add LinkedIn profile]
+- Email: [Add email address]
 
 ---
 

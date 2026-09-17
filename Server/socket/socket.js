@@ -26,7 +26,7 @@ export const connectToSocket = (server) => {
       origin: [
         "http://localhost:5173",
         "http://localhost:5174",
-        "https://milky-way-farms.vercel.app",
+        "https://madhurdairy.vercel.app",
       ],
       methods: ["GET", "POST", "DELETE", "PUT"],
     },

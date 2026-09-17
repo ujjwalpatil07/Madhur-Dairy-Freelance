@@ -34,7 +34,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
-      "https://milky-way-farms.vercel.app",
+      "https://madhurdairy.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true,
@@ -46,7 +46,6 @@ connectDB();
 const server = http.createServer(app);
 
 connectToSocket(server);
-
 
 app.use("/auth/admin", AuthAdminRoute);
 app.use("/auth/user", AuthUserRoute);
