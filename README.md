@@ -697,8 +697,14 @@ Possible future improvements include:
 
 **Ujjwal Patil**
 
-- LinkedIn: [Add LinkedIn profile]
-- Email: [Add email address]
+- LinkedIn: `https://www.linkedin.com/in/ujjwalpatil07`
+- Email: ujjwalpatil0011.55@gmail.com
+
+**Nitin Gayke**
+
+- LinkedIn: `https://www.linkedin.com/in/nitin-gayke92`
+- Email: gaykenitin975@gmail.com
+
 
 ---
 
